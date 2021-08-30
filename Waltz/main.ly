@@ -36,7 +36,11 @@ musicA = {
     <<
         \relative a' {
             a4 |
-            g'2\turn\fermata~( g8 a |
+            \midiTempo 120
+            g'2\turn\fermata~( g8
+            \midiTempo 150
+            a |
+            \midiTempo 180
             fis4-)
         }
         \\
@@ -412,9 +416,9 @@ musicA = {
     \relative e {
         \oneVoice
         r4 e8 a fis dis |
-        g c a fis b e |
+        gis cis a fis b e |
         cis ais \clef treble dis gis e cis |
-        fis bes g e a d |
+        fis b g e a d |
         b gis cis fis d b |
         e a fis d gis cis |
         a4 r
@@ -446,6 +450,7 @@ musicA = {
             cis2 b8 cis |
             b a g4 cis |
             b4. fis8 b4 |
+            r4 <fis a> <fis d'> |
         }
         \new Voice { \relative d'' {
             \voiceTwo
@@ -453,6 +458,41 @@ musicA = {
             e2 d4 |
             r8 fis, b gis eis4 |
             r4 g8 d fis a |
+            r8 dis, g e cis r |
+            r8 bis e cis s4 |
+            r4 cis8 fis d b |
+            eis cis a r r4 |
+        } }
+    >>
+    %{ C-B %}
+    <<
+        \relative e'' {
+            \voiceOne
+            r4 ees8 bes d fis |
+            a e g bes d4 |
+            r4 g,8 d f a |
+            c g bes d f4 |
+            ees,8 a f d g ees |
+            c f des bes ees c |
+            a bes d f bes d |
+            d, g ees c f d |
+            b c ees g c ees |
+            f, bes ges ees c fis |
+            d b g4 b8 eis |
+        }
+        \new Voice { \relative d' {
+            \voiceTwo
+            r4 r8 d g ees |
+            c4 r8 e a fis |
+            d g ees c f4 |
+            r4 r8 f' bes g |
+            r4 f, bes |
+            ges ees a |
+            f d r |
+            r fis b |
+            g ees r |
+            r c' a |
+            f d
         } }
     >>
 }
@@ -814,10 +854,10 @@ musicB = {
     %{ B-G %}
     \relative g,, {
         \oneVoice
-        <g g'>4 <g' a> r8 <g b> |
-        e <fis c'> cis' r <gis d'>4 |
-        <fis, fis'>4 <fis'' gis> r8 <fis a> |
-        d <e bes'> b' r <fis c'>4 |
+        <g g'>4 <g' a> r8 <fis b> |
+        eis cis' <fis, d'> r <gis d'>4 |
+        <fis, fis'>4 <fis'' gis> r8 <e ais> |
+        dis b' <e, c'> r <fis c'>4 |
     }
     <<
         \relative a' {
@@ -843,6 +883,9 @@ musicB = {
             r8 b e cis a4 |
             r4 fis4. gis8~ |
             gis cis a fis r4 |
+            r4 a e |
+            g bes a8 e |
+            g b fis d gis4 |
         }
         \new Voice { \relative a {
             \voiceTwo
@@ -850,8 +893,29 @@ musicB = {
             d, a' a |
             d, b' b |
             d,4 r d |
+            a bis' s |
+            a, r r |
+            d r8 d~ d4 |
+            d,8 a' b d fis a |
         } }
     >>
+    %{ C-B %}
+    \relative b {
+        \oneVoice
+        bes4 bes4. a8 |
+        c2 bes4 |
+        g2 f8 g |
+        f ees d4 g |
+        f2 ees8 f |
+        ees d c4 f |
+        d bes f'8 g |
+        f ees d4 g |
+        ees c c'8 des |
+        c bes aes4 d |
+        b8 a g4 cis |
+        ais8 gis fis4 b |
+        gis8 fis e4
+    }
 }
 
 \score {
